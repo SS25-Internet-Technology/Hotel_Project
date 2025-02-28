@@ -16,5 +16,18 @@ The hotel reservation system is designed to manage room bookings, additional ser
 9.	As an Admin, I want to create and edit records using dedicated views so that I can efficiently manage my business data.
 
 # Use Case
+
 # 2. Design 
-# 3. Implementation
+# Prototype Design
+# Domain Design
+# Business Logic
+
+# 3. Implementation Execution
+# Backend Technology
+# Frontend Technology
+
+# 4. Execution Project Management
+# Roles
+
+# 5. Project Management
+# Milestones
