@@ -13,6 +13,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 6.	As an admin, I want to log in so that I can authenticate myself and access the admin functionalities securely.
 
 ### Use Case
+![UserCase drawio](https://github.com/user-attachments/assets/2342a8c6-fa59-468a-adc3-2c4526bef433)
 
 # 2. Design 
 ### Prototype Design
