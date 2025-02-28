@@ -16,6 +16,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 9.	As an Admin, I want to create and edit records using dedicated views so that I can efficiently manage my business data.
 
 # Use Case
+![Screenshot 2025-02-28 163449](https://github.com/user-attachments/assets/97c073ca-13ee-4963-8058-b7016c4d0cc1)
 
 # 2. Design 
 # Prototype Design
