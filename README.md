@@ -8,10 +8,8 @@ The hotel reservation system is designed to manage room bookings, additional ser
 2.	As an admin, I want to set and adjust seasonal prices for different room categories so that the pricing reflects high and low demand periods.
 3.	As an admin, I want to view, edit, and delete reservations so that I can ensure accuracy and address any booking issues.
 4.	As an admin, I want to manage additional services such as PayTV and minibar so that I can add, edit, or remove service options available to guests.
-5.	As an admin, I want to determine the free rooms per category for a specific date or period so that I can provide accurate availability information to potential guests.
+5.	As an admin, I want to determine the available rooms per category for a specific date or period so that I can provide accurate availability information to potential guests.
 6.	As an admin, I want to log in so that I can authenticate myself and access the admin functionalities securely.
-7.	As an admin, I want the web application to be responsive so that it provides an optimal user experience on various devices, including tablets and smartphones.
-8.	As an Admin, I want to use edit and create views to maintain my business data.
-9.	As a User, I want to use list views so that I can access public pages.
-10.	As an admin, I want to have a web app so that I can use it on different mobile devices and desktop computers.
-11.	As an admin, I want to log in so that I can authenticate myself.
+7.	As an admin, I want to have a web application so that I can use it on different mobile devices and desktop computers, which includes PC's, tablets, and phones.
+8.	As an admin, I want the web application to be responsive so that it provides an optimal user experience on the various devices.
+9.	As an Admin, I want to create and edit records using dedicated views so that I can efficiently manage my business data.
