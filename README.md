@@ -17,6 +17,8 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 # 2. Design 
 ### Prototype Design
+%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22edit%20story%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2220%22%20y%3D%22220%22%20width%3D%22120%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%223%22%20value%3D%22%22%20style%3D%22html%3D1%3BverticalLabelPosition%3Dbottom%3Balign%3Dcenter%3BlabelBackgroundColor%3D%23ffffff%3BverticalAlign%3Dtop%3BstrokeWidth%3D2%3BstrokeColor%3D%230080F0%3Bshadow%3D0%3Bdashed%3D0%3Bshape%3Dmxgraph.ios7.icons.locked%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22126%22%20y%3D%22220%22%20width%3D%2224%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E
+
 ### Domain Design
 ### Business Logic
 
