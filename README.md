@@ -1,5 +1,6 @@
 # Hotel_Project
 
+# 1. Analysis
 # Scenario
 The hotel reservation system is designed to manage room bookings, additional services, and payment processing for a hotel. The system supports different room categories, seasonal pricing, smoking and non-smoking preferences, and payment method is selectable at check-in. It also allows for the recording of additional services such as PayTV and minibar usage. The system provides real-time availability of rooms per category for any given date or period.
 
@@ -13,3 +14,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 7.	As an admin, I want to have a web application so that I can use it on different mobile devices and desktop computers, which includes PC's, tablets, and phones.
 8.	As an admin, I want the web application to be responsive so that it provides an optimal user experience on the various devices.
 9.	As an Admin, I want to create and edit records using dedicated views so that I can efficiently manage my business data.
+
+# Use Case
+# 2. Design 
+# 3. Implementation
