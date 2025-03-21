@@ -23,6 +23,9 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 
 ### Domain Design
+
+![image](https://github.com/user-attachments/assets/b3cf06d8-3eba-44b0-a5ae-631a8d6d8a54)
+
 ### Business Logic
 
 # 3. Implementation Execution
