@@ -28,6 +28,11 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 ### Business Logic
 
+![Screenshot 2025-03-21 173430](https://github.com/user-attachments/assets/58405ad2-8c41-4d81-b950-6707caae2b76)
+
+![image](https://github.com/user-attachments/assets/0d1d7dcb-b06a-4494-8397-d253e85be39a)
+
+
 # 3. Implementation Execution
 ### Backend Technology
 ### Frontend Technology
