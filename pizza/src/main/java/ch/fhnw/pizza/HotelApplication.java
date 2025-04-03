@@ -3,24 +3,23 @@ package ch.fhnw.pizza;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ch.fhnw.pizza.business.service.MenuService;
-import ch.fhnw.pizza.data.domain.Pizza;
+import ch.fhnw.pizza.business.service.RoomService;
+import ch.fhnw.pizza.data.domain.Room;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 
 @SpringBootApplication
 @RestController
 @Hidden // Hide this controller from the Swagger UI
-public class PizzaApplication {
+public class HotelApplication {
 
 	@Autowired
-	private MenuService menuService;
+	private RoomService roomService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(PizzaApplication.class, args);
+		SpringApplication.run(HotelApplication.class, args);
 	}
 	
 
@@ -29,15 +28,15 @@ public class PizzaApplication {
 	// To resolve the error, delete the file and restart the application
 	@PostConstruct
 	private void initPlaceholderData() throws Exception {
-		Pizza pizza = new Pizza();
-		pizza.setPizzaName("Margherita");
-		pizza.setPizzaToppings("Tomato sauce, mozzarella, basil");
-		menuService.addPizza(pizza);
-
-		pizza = new Pizza();
-		pizza.setPizzaName("Funghi");
-		pizza.setPizzaToppings("Tomato sauce, mozzarella, mushrooms");
-		menuService.addPizza(pizza);
+		Room room = new Room();
+		room.setPrice(100);
+		room.setRoomAvailability(true);
+		roomService.addRoom(room);
+	
+		room = new Room();
+		room.setPrice(150);
+		room.setRoomAvailability(false);
+		roomService.addRoom(room);
 		
 	}
 
