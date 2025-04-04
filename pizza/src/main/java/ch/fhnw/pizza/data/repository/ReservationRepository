@@ -15,4 +15,3 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     List<Reservation> findByRooms_RoomName(String roomName);
     */
 }
-ren ReservationRepository ReservationRepository.java
