@@ -28,6 +28,14 @@ public class Reservation {
     )
     private Set<Room> rooms;
 
+    @ManyToMany
+    @JoinTable(
+        name = "reservation_extra_service", // 중간 테이블 이름
+        joinColumns = @JoinColumn(name = "reservation_id"), // 현재 엔티티의 외래 키
+        inverseJoinColumns = @JoinColumn(name = "extra_service_id") // 반대 엔티티의 외래 키
+    )
+    private Set<ExtraService> services;
+
     // Getters and Setters
     public Long getReservationId() {
         return reservationId;
@@ -77,4 +85,12 @@ public class Reservation {
         this.rooms = rooms;
     }
     
+    public Set<ExtraService> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<ExtraService> services) {
+        this.services = services;
+    }
+
 }
