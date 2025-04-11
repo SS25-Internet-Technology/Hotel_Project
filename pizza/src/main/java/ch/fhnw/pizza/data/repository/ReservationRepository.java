@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import ch.fhnw.pizza.data.domain.Reservation;
 
 @Repository
-public interface ReservationRepository.java extends JpaRepository<Reservation, Long> {
+public interface ReservationRepository extends JpaRepository<Reservation, Long> {
     /*
     List<Reservation> findByStartDateBetween(LocalDate start, LocalDate end);
     List<Reservation> findByRooms_RoomName(String roomName);
