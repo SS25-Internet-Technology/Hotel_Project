@@ -1,3 +1,5 @@
+package ch.fhnw.pizza.data.domain;
+
 import jakarta.persistence.*;
 import io.swagger.v3.oas.annotations.Hidden;
 import java.util.Date;
