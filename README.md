@@ -38,7 +38,11 @@ The hotel reservation system is designed to manage room bookings, additional ser
 ### Frontend Technology
 
 # 4. Execution Project Management
-### Roles
+## As a team of three people we have had some more work to devide between us. At first we worked on the same task and by milestone3 we decide to devide the work.
 
-# 5. Project Management
-### Milestones
+|         Milestones      | Assigned To  | Status       |   Task / Feature               |
+|-------------------------|--------------|--------------|--------------------------------|
+|  Use Case               | Delia        |  Completed   | Implemented login/logout       |
+| Room Management UI      | Luz          |  Completed   | Pending responsive design      |
+| Payment System          | Been         |  Completed   | Waiting for API documentation  |
+| Database Schema Design  | Luz, Been, Delia   |  Completed   | Reviewing by team               |
