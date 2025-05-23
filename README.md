@@ -38,8 +38,8 @@ The hotel reservation system is designed to manage room bookings, additional ser
 ### Frontend Technology
 
 # 4. Execution Project Management
-## Milestones and workload distribution
-### As a team of three people we have had some more work to devide between us. At first we worked on the same task and by milestone3 we decide to devide the work.
+### Milestones and workload distribution
+To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
 
 |         Milestones      | Assigned To  | Status       |   Task / Feature               |
 |-------------------------|--------------|--------------|--------------------------------|
