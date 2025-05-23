@@ -38,7 +38,8 @@ The hotel reservation system is designed to manage room bookings, additional ser
 ### Frontend Technology
 
 # 4. Execution Project Management
-## As a team of three people we have had some more work to devide between us. At first we worked on the same task and by milestone3 we decide to devide the work.
+## Milestones and workload distribution
+### As a team of three people we have had some more work to devide between us. At first we worked on the same task and by milestone3 we decide to devide the work.
 
 |         Milestones      | Assigned To  | Status       |   Task / Feature               |
 |-------------------------|--------------|--------------|--------------------------------|
