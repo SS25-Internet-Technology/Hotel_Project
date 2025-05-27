@@ -38,7 +38,12 @@ The hotel reservation system is designed to manage room bookings, additional ser
 ### Frontend Technology
 
 # 4. Execution Project Management
-### Roles
+### Milestones and workload distribution
+To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
 
-# 5. Project Management
-### Milestones
+|         Milestones      | Assigned To  | Status       |   Task / Feature               |
+|-------------------------|--------------|--------------|--------------------------------|
+|  Use Case               | Delia        |  Completed   | Implemented login/logout       |
+| Room Management UI      | Luz          |  Completed   | Pending responsive design      |
+| Payment System          | Been         |  Completed   | Waiting for API documentation  |
+| Database Schema Design  | Luz, Been, Delia   |  Completed   | Reviewing by team               |
