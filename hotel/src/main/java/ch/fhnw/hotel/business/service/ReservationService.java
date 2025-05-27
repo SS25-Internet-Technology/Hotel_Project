@@ -25,7 +25,7 @@ public class ReservationService {
     }
 
     public Reservation addReservation(Reservation reservation) throws Exception {
-        if (reservation.getReservationTotal() <= 0) {
+        if (reservation.getTotal() <= 0) {
             throw new Exception("Invalid reservation total. It must be greater than 0.");
         }
         return reservationRepository.save(reservation);
@@ -36,13 +36,13 @@ public class ReservationService {
         if (existingReservationOpt.isPresent()) {
             Reservation existingReservation = existingReservationOpt.get();
             
-            if (updatedReservation.getReservationTotal() > 0) {
-                existingReservation.setReservationTotal(updatedReservation.getReservationTotal());
+            if (updatedReservation.getTotal() > 0) {
+                existingReservation.setTotal(updatedReservation.getTotal());
             }
             existingReservation.setPaymentInfo(updatedReservation.getPaymentInfo());
-            existingReservation.setStartDate(updatedReservation.getStartDate());
-            existingReservation.setEndDate(updatedReservation.getEndDate());
-            existingReservation.setRooms(updatedReservation.getRooms());
+            existingReservation.setCheckInDate(updatedReservation.getCheckInDate());
+            existingReservation.setCheckOutDate(updatedReservation.getCheckOutDate());
+            existingReservation.setRoom(updatedReservation.getRoom());
             
             return reservationRepository.save(existingReservation);
         }

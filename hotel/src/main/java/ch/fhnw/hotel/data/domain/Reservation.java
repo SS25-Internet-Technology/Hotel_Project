@@ -11,22 +11,17 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long reservationId;
 
-    private double reservationTotal;
+    private double total;
 
     private String paymentInfo;
 
-    private LocalDate startDate;
+    private LocalDate checkInDate;
 
-    private LocalDate endDate;
+    private LocalDate checkOutDate;
 
-    
-    @ManyToMany
-    @JoinTable(
-        name = "reservation_room",
-        joinColumns = @JoinColumn(name = "reservation_id"),
-        inverseJoinColumns = @JoinColumn(name = "room_id")
-    )
-    private Set<Room> rooms;
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     @ManyToMany
     @JoinTable(
@@ -45,12 +40,12 @@ public class Reservation {
         this.reservationId = reservationId;
     }
 
-    public double getReservationTotal() {
-        return reservationTotal;
+    public double getTotal() {
+        return total;
     }
 
-    public void setReservationTotal(double reservationTotal) {
-        this.reservationTotal = reservationTotal;
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     public String getPaymentInfo() {
@@ -61,30 +56,30 @@ public class Reservation {
         this.paymentInfo = paymentInfo;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getCheckInDate() {
+        return checkInDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setCheckInDate(LocalDate checkInDate) {
+        this.checkInDate = checkInDate;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
     }
 
-    public Set<Room> getRooms() {
-        return rooms;
+    public Room getRoom() { 
+        return room;
     }
 
-    public void setRooms(Set<Room> rooms) {
-        this.rooms = rooms;
+    public void setRoom(Room room) {
+        this.room = room;
     }
-    
+
     public Set<ExtraService> getServices() {
         return services;
     }
