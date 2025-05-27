@@ -2,7 +2,7 @@ package ch.fhnw.hotel.data.domain;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "room")
@@ -17,13 +17,14 @@ public class Room {
     @Column(name = "price")
     private int price;
 
+    @Column(name = "room_number")
+    private String roomNumber;
+
     @Column(name = "room_availability")
     private boolean roomAvailability;
 
-    /*
-    @ManyToOne
-    private Menu menu;
-    */
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+    private List<Reservation> reservations;
 
     public Long getId() {
         return id;
@@ -41,6 +42,14 @@ public class Room {
         this.price = price;
     }
 
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
     public boolean isRoomAvailability() {
         return roomAvailability;
     }
@@ -49,14 +58,11 @@ public class Room {
         this.roomAvailability = roomAvailability;
     }
 
-    @ManyToMany(mappedBy = "rooms")
-    private Set<Reservation> reservations;
-
-    public Set<Reservation> getReservations() {
+    public List<Reservation> getReservations() {
         return reservations;
     }
 
-    public void setReservations(Set<Reservation> reservations) {
+    public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
     

@@ -69,11 +69,4 @@ public class RoomController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Room not found");
         }
     }
-/*
-    @GetMapping(path="", produces = "application/json")
-    public ResponseEntity<Menu> getMenu(@RequestParam String location) {
-        Menu menu = menuService.getMenuByLocation(location);
-        return ResponseEntity.ok(menu);      
-    }
-*/    
 }

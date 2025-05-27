@@ -31,11 +31,13 @@ public class HotelApplication {
 		Room room = new Room();
 		room.setPrice(100);
 		room.setRoomAvailability(true);
+		room.setRoomNumber("101");
 		roomService.addRoom(room);
 	
 		room = new Room();
 		room.setPrice(150);
 		room.setRoomAvailability(false);
+		room.setRoomNumber("202");
 		roomService.addRoom(room);
 		
 	}
