@@ -1,8 +1,11 @@
 package ch.fhnw.hotel.data.domain;
 
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Reservation {
@@ -11,7 +14,7 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long reservationId;
 
-    private double total;
+    private BigDecimal total;
 
     private String paymentInfo;
 
@@ -23,13 +26,8 @@ public class Reservation {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @ManyToMany
-    @JoinTable(
-        name = "reservation_extra_service", // 중간 테이블 이름
-        joinColumns = @JoinColumn(name = "reservation_id"), // 현재 엔티티의 외래 키
-        inverseJoinColumns = @JoinColumn(name = "extra_service_id") // 반대 엔티티의 외래 키
-    )
-    private Set<ExtraService> services;
+    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL)
+    private List<ReservationExtraService> extraServices = new ArrayList<>();;
 
     // Getters and Setters
     public Long getReservationId() {
@@ -40,11 +38,11 @@ public class Reservation {
         this.reservationId = reservationId;
     }
 
-    public double getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 
@@ -80,12 +78,12 @@ public class Reservation {
         this.room = room;
     }
 
-    public Set<ExtraService> getServices() {
-        return services;
+    public List<ReservationExtraService> getExtraServices() {
+        return extraServices;
     }
 
-    public void setServices(Set<ExtraService> services) {
-        this.services = services;
+    public void setExtraServices(List<ReservationExtraService> extraServices) {
+        this.extraServices = extraServices;
     }
 
 }

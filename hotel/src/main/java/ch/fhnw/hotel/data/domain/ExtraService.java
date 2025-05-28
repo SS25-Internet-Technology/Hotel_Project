@@ -2,7 +2,8 @@ package ch.fhnw.hotel.data.domain;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "extra_service")
@@ -19,13 +20,8 @@ public class ExtraService {
     @Column(name = "price", precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
-    @ManyToMany
-    @JoinTable(
-        name = "reservation_extra_service", // Join table name
-        joinColumns = @JoinColumn(name = "extra_service_id"), // Foreign key for the current entity
-        inverseJoinColumns = @JoinColumn(name = "reservation_id") // Foreign key for the related entity
-    )
-    private Set<Reservation> reservations;
+   @OneToMany(mappedBy = "extraService", cascade = CascadeType.ALL)
+    private List<ReservationExtraService> reservationLinks = new ArrayList<>();;
 
     // Getters and Setters
     public Long getId() {
@@ -48,11 +44,12 @@ public class ExtraService {
         this.price = price;
     }
 
-    public Set<Reservation> getReservations() {
-        return reservations;
+    public List<ReservationExtraService> getReservationLinks() {
+        return reservationLinks;
     }
 
-    public void setReservations(Set<Reservation> reservations) {
-        this.reservations = reservations;
+    public void setReservationLinks(List<ReservationExtraService> reservationLinks) {
+        this.reservationLinks = reservationLinks;
     }
+
 }
