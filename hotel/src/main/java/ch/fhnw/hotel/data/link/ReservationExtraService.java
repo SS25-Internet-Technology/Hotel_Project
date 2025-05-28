@@ -1,5 +1,7 @@
-package ch.fhnw.hotel.data.domain;
+package ch.fhnw.hotel.data.link;
 
+import ch.fhnw.hotel.data.domain.ExtraService;
+import ch.fhnw.hotel.data.domain.Reservation;
 import jakarta.persistence.*;
 
 @Entity

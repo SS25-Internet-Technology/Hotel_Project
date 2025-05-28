@@ -1,4 +1,4 @@
-package ch.fhnw.hotel.data.domain;
+package ch.fhnw.hotel.data.enumtype;
 
 public enum ExtraServiceType {
     PAYTV,

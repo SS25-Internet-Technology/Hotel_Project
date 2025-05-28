@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.fhnw.hotel.data.enumtype.ExtraServiceType;
+import ch.fhnw.hotel.data.link.ReservationExtraService;
+
 @Entity
 @Table(name = "extra_service")
 public class ExtraService {

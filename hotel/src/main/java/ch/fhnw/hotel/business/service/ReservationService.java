@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import ch.fhnw.hotel.data.domain.ExtraService;
 import ch.fhnw.hotel.data.domain.Reservation;
-import ch.fhnw.hotel.data.domain.ReservationExtraService;
 import ch.fhnw.hotel.data.domain.Room;
+import ch.fhnw.hotel.data.link.ReservationExtraService;
 import ch.fhnw.hotel.data.repository.ExtraServiceRepository;
 import ch.fhnw.hotel.data.repository.ReservationRepository;
 import ch.fhnw.hotel.data.repository.RoomRepository;

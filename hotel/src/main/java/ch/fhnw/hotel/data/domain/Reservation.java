@@ -7,6 +7,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.fhnw.hotel.data.link.ReservationExtraService;
+
 @Entity
 public class Reservation {
 
