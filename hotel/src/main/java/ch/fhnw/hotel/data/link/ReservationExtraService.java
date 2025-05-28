@@ -30,4 +30,8 @@ public class ReservationExtraService {
     @JoinColumn(name = "extra_service_id")
     private ExtraService extraService;
 
+    public ReservationExtraService(Reservation reservation, ExtraService extraService) {
+        this.reservation = reservation;
+        this.extraService = extraService;
+    }
 }
