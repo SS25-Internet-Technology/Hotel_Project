@@ -2,6 +2,7 @@ package ch.fhnw.hotel.controller;
 
 import ch.fhnw.hotel.business.service.RoomService;
 import ch.fhnw.hotel.data.domain.Room;
+import ch.fhnw.hotel.dto.RoomRequestDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,28 +37,24 @@ public class RoomController {
     }
 
     @PostMapping(path="/rooms", consumes="application/json", produces = "application/json")
-    public ResponseEntity addRoom(@RequestBody Room room) {
+    public ResponseEntity addRoom(@RequestBody RoomRequestDto dto) {
         try{
-            room = roomService.addRoom(room);
-            
+            return ResponseEntity.ok(roomService.addRoom(dto));
+
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Room already exists or invalid data provided");
         }
-        return ResponseEntity.ok(room);
-        
     }
 
     @PutMapping(path="/rooms/{id}", consumes="application/json", produces = "application/json")
-    public ResponseEntity updateRoom(@PathVariable Long id, @RequestBody Room room) {
+    public ResponseEntity updateRoom(@PathVariable Long id, @RequestBody RoomRequestDto dto) {
         try{
-            room = roomService.updateRoom(id, room);
+            return ResponseEntity.ok(roomService.updateRoom(id, dto));
             
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("No room found with given id");
 
-        }
-        return ResponseEntity.ok(room);
-        
+        }        
     }
 
     @DeleteMapping(path="/rooms/{id}")

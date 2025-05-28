@@ -33,8 +33,8 @@ public class RoomCategoryService {
     public RoomCategory updateRoomCategory(Long id, RoomCategory roomCategory) throws Exception {
         RoomCategory roomCategoryToUpdate = roomCategoryRepository.findById(id).orElseThrow(() -> 
             new Exception("RoomCategory with id " + id + " does not exist"));
-        if (roomCategory.getType() != null) {
-            roomCategoryToUpdate.setType(roomCategory.getType());
+        if (roomCategory.getRoomType() != null) {
+            roomCategoryToUpdate.setRoomType(roomCategory.getRoomType());
         }
         roomCategoryToUpdate.setSmokeAllowed(roomCategory.isSmokeAllowed());
         roomCategoryToUpdate.setSeasonalMultiplier(roomCategory.getSeasonalMultiplier());

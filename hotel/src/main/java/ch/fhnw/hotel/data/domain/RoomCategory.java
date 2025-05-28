@@ -1,6 +1,9 @@
 package ch.fhnw.hotel.data.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +11,8 @@ import java.util.List;
 import ch.fhnw.hotel.data.enumtype.RoomType;
 
 @Entity
+@Getter
+@Setter
 public class RoomCategory {
 
     @Id
@@ -17,7 +22,7 @@ public class RoomCategory {
     // Room type: SINGLE or DOUBLE
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private RoomType type;
+    private RoomType roomType;
 
     // Indicates if smoking is allowed in this category
     @Column(nullable = false)
@@ -40,42 +45,5 @@ public class RoomCategory {
     public void removeRoom(Room room) {
         rooms.remove(room);
         room.setCategory(null);
-    }
-
-    // --- Getters & Setters ---
-    public Long getId() {
-        return id;
-    }
-
-    public RoomType getType() {
-        return type;
-    }
-
-    public void setType(RoomType type) {
-        this.type = type;
-    }
-
-    public boolean isSmokeAllowed() {
-        return smokeAllowed;
-    }
-
-    public void setSmokeAllowed(boolean smokeAllowed) {
-        this.smokeAllowed = smokeAllowed;
-    }
-
-    public BigDecimal getSeasonalMultiplier() {
-        return seasonalMultiplier;
-    }
-
-    public void setSeasonalMultiplier(BigDecimal seasonalMultiplier) {
-        this.seasonalMultiplier = seasonalMultiplier;
-    }
-
-    public List<Room> getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
     }
 }
