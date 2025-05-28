@@ -1,5 +1,7 @@
 package ch.fhnw.hotel;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,13 +31,13 @@ public class HotelApplication {
 	@PostConstruct
 	private void initPlaceholderData() throws Exception {
 		Room room = new Room();
-		room.setPrice(100);
+		room.setPrice(BigDecimal.valueOf(100));
 		room.setRoomAvailability(true);
 		room.setRoomNumber("101");
 		roomService.addRoom(room);
 	
 		room = new Room();
-		room.setPrice(150);
+		room.setPrice(BigDecimal.valueOf(150));
 		room.setRoomAvailability(false);
 		room.setRoomNumber("202");
 		roomService.addRoom(room);

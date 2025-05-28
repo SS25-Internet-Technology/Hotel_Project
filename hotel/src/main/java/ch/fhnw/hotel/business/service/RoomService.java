@@ -1,5 +1,6 @@
 package ch.fhnw.hotel.business.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class RoomService {
     }
 
     public Room addRoom(Room room) throws Exception {
-        if (room.getPrice() <= 0) {
+        if (room.getPrice() == null || room.getPrice().compareTo(java.math.BigDecimal.ZERO) <= 0) {
             throw new Exception("Invalid room price. Price must be greater than 0.");
         }
         return roomRepository.save(room);
@@ -38,7 +39,7 @@ public class RoomService {
     public Room updateRoom(Long id, Room room) throws Exception {
         Room roomToUpdate = roomRepository.findById(id).get();
         if(roomToUpdate != null) {
-            if(room.getPrice() > 0) {
+            if(room.getPrice() != null && room.getPrice().compareTo(BigDecimal.ZERO) > 0) {
                 roomToUpdate.setPrice(room.getPrice()); 
             }
             roomToUpdate.setRoomAvailability(room.isRoomAvailability());

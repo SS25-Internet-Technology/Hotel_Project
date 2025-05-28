@@ -2,6 +2,8 @@ package ch.fhnw.hotel.data.domain;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -15,7 +17,7 @@ public class Room {
     private Long id;
 
     @Column(name = "price")
-    private int price;
+    private BigDecimal price;
 
     @Column(name = "room_number")
     private String roomNumber;
@@ -34,11 +36,11 @@ public class Room {
         this.id = id;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
     
-    public void setPrice(int price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
