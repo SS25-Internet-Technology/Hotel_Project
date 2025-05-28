@@ -2,6 +2,7 @@ package ch.fhnw.hotel.data.domain;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden //This annotation hides the id field from the swagger documentation
     @Column(name = "id", nullable = false)
+    @Setter(AccessLevel.NONE) // No setter for id, as it is a unique identifier
     private Long id;
 
     @Column(name = "price")

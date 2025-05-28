@@ -3,6 +3,7 @@ package ch.fhnw.hotel.data.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.AccessLevel;  
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,10 +14,12 @@ import ch.fhnw.hotel.data.enumtype.RoomType;
 @Entity
 @Getter
 @Setter
+@Table(name = "room_category")
 public class RoomCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE) // No setter for id, as it is a unique identifier
     private Long id;
 
     // Room type: SINGLE or DOUBLE

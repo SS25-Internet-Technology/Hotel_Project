@@ -1,10 +1,15 @@
 package ch.fhnw.hotel.data.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.AccessLevel;
 import io.swagger.v3.oas.annotations.Hidden;
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "guest")
 public class Guest {
 
@@ -12,6 +17,7 @@ public class Guest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden // Oculta el campo id en la documentación Swagger
     @Column(name = "id", nullable = false)
+    @Setter(AccessLevel.NONE) // No setter for id, as it is a unique identifier
     private Long id;
 
     @Column(name = "full_name", nullable = false)
@@ -43,85 +49,4 @@ public class Guest {
     @JoinColumn(name = "reservation_id")
     private Reservation reservation;
 
-    // Getters and setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getNationality() {
-        return nationality;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public String getDocumentType() {
-        return documentType;
-    }
-
-    public void setDocumentType(String documentType) {
-        this.documentType = documentType;
-    }
-
-    public String getDocumentNumber() {
-        return documentNumber;
-    }
-
-    public void setDocumentNumber(String documentNumber) {
-        this.documentNumber = documentNumber;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Reservation getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
-    }
 }
