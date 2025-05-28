@@ -2,6 +2,8 @@ package ch.fhnw.hotel.controller;
 
 import ch.fhnw.hotel.business.service.ReservationService;
 import ch.fhnw.hotel.data.domain.Reservation;
+import ch.fhnw.hotel.dto.ReservationRequestDto;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,23 +34,23 @@ public class ReservationController {
     }
 
     @PostMapping(path="/reservations", consumes="application/json", produces = "application/json")
-    public ResponseEntity addReservation(@RequestBody Reservation reservation) {
+    public ResponseEntity addReservation(@RequestBody ReservationRequestDto dto) {
         try {
-            reservation = reservationService.addReservation(reservation);
+            Reservation reservation = reservationService.createReservation(dto);
+            return ResponseEntity.ok(reservation);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid reservation data provided");
         }
-        return ResponseEntity.ok(reservation);
     }
 
     @PutMapping(path="/reservations/{id}", consumes="application/json", produces = "application/json")
-    public ResponseEntity updateReservation(@PathVariable Long id, @RequestBody Reservation reservation) {
+    public ResponseEntity updateReservation(@PathVariable Long id, @RequestBody ReservationRequestDto dto) {
         try {
-            reservation = reservationService.updateReservation(id, reservation);
+            Reservation updated = reservationService.updateReservation(id, dto);
+            return ResponseEntity.ok(updated);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("No reservation found with given id");
         }
-        return ResponseEntity.ok(reservation);
     }
 
     @DeleteMapping(path="/reservations/{id}")
