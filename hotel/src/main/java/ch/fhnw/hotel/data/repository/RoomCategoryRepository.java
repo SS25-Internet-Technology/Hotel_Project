@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RoomCategoryRepository extends JpaRepository<RoomCategory, Long> {
     // Additional query methods can be defined here if needed
-    Optional<RoomCategory> findByTypeAndSmokeAllowed(RoomType type, boolean smokeAllowed);
+    Optional<RoomCategory> findByRoomTypeAndSmokeAllowed(RoomType type, boolean smokeAllowed);
 }

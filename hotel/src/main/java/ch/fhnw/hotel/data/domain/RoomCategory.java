@@ -9,7 +9,10 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import ch.fhnw.hotel.data.enumtype.RoomType;
+import io.swagger.v3.oas.annotations.Hidden;
 
 @Entity
 @Getter
@@ -19,6 +22,8 @@ public class RoomCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Hidden //This annotation hides the id field from the swagger documentation
+    @Column(name = "id", nullable = false)
     @Setter(AccessLevel.NONE) // No setter for id, as it is a unique identifier
     private Long id;
 
@@ -37,6 +42,7 @@ public class RoomCategory {
 
         // One RoomCategory has many Rooms
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore // Prevent infinite recursion
     private List<Room> rooms = new ArrayList<>();
 
     // --- Convenience method to manage bi-directional relationship ---

@@ -11,6 +11,7 @@ import ch.fhnw.hotel.data.domain.RoomCategory;
 import ch.fhnw.hotel.data.repository.RoomCategoryRepository;
 import ch.fhnw.hotel.data.repository.RoomRepository;
 import ch.fhnw.hotel.dto.RoomRequestDto;
+import ch.fhnw.hotel.dto.RoomResponseDto;
 
 @Service
 public class RoomService {
@@ -21,31 +22,35 @@ public class RoomService {
     @Autowired
     private RoomCategoryRepository roomCategoryRepository;
 
-    public Room findRoomById(Long id) {
+    public RoomResponseDto findRoomById(Long id) {
         try {
             Room room = roomRepository.findById(id).get();
-            return room;
+            return new RoomResponseDto(room);
         } catch (Exception e) {
             throw new RuntimeException("Room with id " + id + " not found");
         }
     }
 
-    public List<Room> getAllRooms() {
+    public List<RoomResponseDto> getAllRooms() {
         List<Room> roomList = roomRepository.findAll();
-        return roomList;
+        return roomList.stream()
+            .map(RoomResponseDto::new)
+            .toList();
     }
 
-    public Room addRoom(RoomRequestDto dto) throws Exception {
+    public RoomResponseDto addRoom(RoomRequestDto dto) throws Exception {
         Room room = new Room();
         validateAndSetRoomFields(room, dto);
-        return roomRepository.save(room);
+        roomRepository.save(room);
+        return new RoomResponseDto(room);
     }
 
-    public Room updateRoom(Long id, RoomRequestDto dto) throws Exception {
+    public RoomResponseDto updateRoom(Long id, RoomRequestDto dto) throws Exception {
         Room roomToUpdate = roomRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Room with id " + id + " does not exist"));
         validateAndSetRoomFields(roomToUpdate, dto);
-        return roomRepository.save(roomToUpdate);
+        roomRepository.save(roomToUpdate);
+        return new RoomResponseDto(roomToUpdate);
     }
     
     private void validateAndSetRoomFields(Room room, RoomRequestDto dto) throws Exception {
@@ -59,7 +64,7 @@ public class RoomService {
         }
         room.setRoomNumber(dto.getRoomNumber());
 
-        RoomCategory roomCategory = roomCategoryRepository.findByTypeAndSmokeAllowed(
+        RoomCategory roomCategory = roomCategoryRepository.findByRoomTypeAndSmokeAllowed(
             dto.getRoomType(), dto.isSmokeAllowed()
         ).orElseThrow(() -> new RuntimeException("Room category not found"));
         room.setCategory(roomCategory);

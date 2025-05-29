@@ -1,8 +1,8 @@
 package ch.fhnw.hotel.controller;
 
 import ch.fhnw.hotel.business.service.RoomService;
-import ch.fhnw.hotel.data.domain.Room;
 import ch.fhnw.hotel.dto.RoomRequestDto;
+import ch.fhnw.hotel.dto.RoomResponseDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,10 +19,10 @@ public class RoomController {
     private RoomService roomService;
 
     @GetMapping(path="/rooms/{id}", produces = "application/json")
-    public ResponseEntity getRoom(@PathVariable Long id) {
+    public ResponseEntity<?> getRoom(@PathVariable Long id) {
         try{
-            Room room = roomService.findRoomById(id);
-            return ResponseEntity.ok(room);
+            RoomResponseDto dto = roomService.findRoomById(id);
+            return ResponseEntity.ok(dto);
         }
         catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No room found with given id");
@@ -30,14 +30,14 @@ public class RoomController {
     }
 
     @GetMapping(path="/rooms", produces = "application/json")
-    public List<Room> getRoomList() {
-        List<Room> roomList = roomService.getAllRooms();
+    public List<RoomResponseDto> getRoomList() {
+        List<RoomResponseDto> roomList = roomService.getAllRooms();
 
         return roomList;
     }
 
     @PostMapping(path="/rooms", consumes="application/json", produces = "application/json")
-    public ResponseEntity addRoom(@RequestBody RoomRequestDto dto) {
+    public ResponseEntity<?> addRoom(@RequestBody RoomRequestDto dto) {
         try{
             return ResponseEntity.ok(roomService.addRoom(dto));
 
@@ -47,7 +47,7 @@ public class RoomController {
     }
 
     @PutMapping(path="/rooms/{id}", consumes="application/json", produces = "application/json")
-    public ResponseEntity updateRoom(@PathVariable Long id, @RequestBody RoomRequestDto dto) {
+    public ResponseEntity<?> updateRoom(@PathVariable Long id, @RequestBody RoomRequestDto dto) {
         try{
             return ResponseEntity.ok(roomService.updateRoom(id, dto));
             

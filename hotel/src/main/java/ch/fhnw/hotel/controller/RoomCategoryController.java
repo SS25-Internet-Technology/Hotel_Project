@@ -27,12 +27,12 @@ public class RoomCategoryController {
         }
     }
 
-    @GetMapping(path="/", produces = "application/json")
+    @GetMapping(produces = "application/json")
     public List<RoomCategory> getRoomCategoryList() {
         return roomCategoryService.getAllRoomCategories();
     }
 
-    @PostMapping(path="/", consumes="application/json", produces = "application/json")
+    @PostMapping(consumes="application/json", produces = "application/json")
     public ResponseEntity addRoomCategory(@RequestBody RoomCategory roomCategory) {
         try {
             roomCategory = roomCategoryService.addRoomCategory(roomCategory);
