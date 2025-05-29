@@ -23,14 +23,17 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 
 ### Domain Design
+[ERD](https://drive.google.com/drive/u/1/folders/1xLNBBYhVzAGmt-Be_yOchE8u-uEWnczm)
 
-![image](https://github.com/user-attachments/assets/b3cf06d8-3eba-44b0-a5ae-631a8d6d8a54)
+![image](https://github.com/user-attachments/assets/e88b73d2-ad2a-42bf-b56d-40e58695d544)
 
 ### Business Logic
 
-![Screenshot 2025-03-21 173430](https://github.com/user-attachments/assets/58405ad2-8c41-4d81-b950-6707caae2b76)
+![image](https://github.com/user-attachments/assets/fd840ab0-8866-45c9-a850-a386c7edef27)
+![image](https://github.com/user-attachments/assets/84755b0c-83dc-4083-a703-e280d45b1c43)
+![image](https://github.com/user-attachments/assets/5af75216-9b98-46c2-bf5a-9ac9e24bdf29)
+![image](https://github.com/user-attachments/assets/3dda8489-c628-483d-a033-55db58bbe2c6)
 
-![image](https://github.com/user-attachments/assets/0d1d7dcb-b06a-4494-8397-d253e85be39a)
 
 
 # 3. Implementation Execution
