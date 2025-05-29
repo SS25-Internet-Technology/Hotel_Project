@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ch.fhnw.hotel.data.link.ReservationExtraService;
+import io.swagger.v3.oas.annotations.Hidden;
 
 @Entity
 @Getter
@@ -20,8 +21,10 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Hidden //This annotation hides the id field from the swagger documentation
+    @Column(name = "id", nullable = false)
     @Setter(AccessLevel.NONE) // No setter for id, as it is a unique identifier
-    private Long reservationId;
+    private Long id;
 
     private BigDecimal total;
 
@@ -35,7 +38,7 @@ public class Reservation {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReservationExtraService> extraServices = new ArrayList<>();;
 
 }

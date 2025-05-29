@@ -17,6 +17,7 @@ import ch.fhnw.hotel.data.repository.ExtraServiceRepository;
 import ch.fhnw.hotel.data.repository.ReservationRepository;
 import ch.fhnw.hotel.data.repository.RoomRepository;
 import ch.fhnw.hotel.dto.ReservationRequestDto;
+import ch.fhnw.hotel.dto.ReservationResponseDto;
 
 @Service
 public class ReservationService {
@@ -30,25 +31,30 @@ public class ReservationService {
     @Autowired
     private ExtraServiceRepository extraServiceRepository;
 
-    public Reservation findReservationById(Long id) {
-        return reservationRepository.findById(id)
+    public ReservationResponseDto findReservationById(Long id) {
+        Reservation reservation = reservationRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Reservation with id " + id + " not found"));
+        return new ReservationResponseDto(reservation);
     }
 
-    public List<Reservation> getAllReservations() {
-        return reservationRepository.findAll();
+    public List<ReservationResponseDto> getAllReservations() {
+        List<Reservation> reservationList = reservationRepository.findAll();
+        return reservationList.stream()
+            .map(ReservationResponseDto::new)
+            .toList();
     }
 
-    public Reservation createReservation(ReservationRequestDto dto) throws Exception {
+    public ReservationResponseDto createReservation(ReservationRequestDto dto) throws Exception {
         Room room = roomRepository.findById(dto.getRoomId())
                 .orElseThrow(() -> new RuntimeException("Room not found"));
 
         Reservation reservation = new Reservation();
         setReservationFields(reservation, room, dto);
-        return reservationRepository.save(reservation);
+        reservationRepository.save(reservation);
+        return new ReservationResponseDto(reservation);
     }
 
-    public Reservation updateReservation(Long reservationId, ReservationRequestDto dto) throws Exception {
+    public ReservationResponseDto updateReservation(Long reservationId, ReservationRequestDto dto) throws Exception {
         Reservation reservation = reservationRepository.findById(reservationId)
             .orElseThrow(() -> new RuntimeException("Reservation with id " + reservationId + " does not exist"));
 
@@ -59,7 +65,8 @@ public class ReservationService {
         reservation.getExtraServices().clear();
 
         setReservationFields(reservation, room, dto);
-        return reservationRepository.save(reservation);
+        reservationRepository.save(reservation);
+        return new ReservationResponseDto(reservation);
     }
 
     // Helper method to set reservation fields and calculate total
@@ -77,7 +84,8 @@ public class ReservationService {
             ReservationExtraService link = new ReservationExtraService(reservation, service);
             extras.add(link);
         }
-        reservation.setExtraServices(extras);
+        //reservation.setExtraServices(extras);
+        reservation.getExtraServices().addAll(extras);
 
         // Calculate total price based on room and extra services
         long days = reservation.getCheckOutDate().toEpochDay() - reservation.getCheckInDate().toEpochDay();

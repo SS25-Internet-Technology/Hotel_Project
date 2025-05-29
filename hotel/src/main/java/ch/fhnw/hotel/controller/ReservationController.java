@@ -1,8 +1,8 @@
 package ch.fhnw.hotel.controller;
 
 import ch.fhnw.hotel.business.service.ReservationService;
-import ch.fhnw.hotel.data.domain.Reservation;
 import ch.fhnw.hotel.dto.ReservationRequestDto;
+import ch.fhnw.hotel.dto.ReservationResponseDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,24 +19,24 @@ public class ReservationController {
     private ReservationService reservationService;
 
     @GetMapping(path="/reservations/{id}", produces = "application/json")
-    public ResponseEntity getReservation(@PathVariable Long id) {
+    public ResponseEntity<?> getReservation(@PathVariable Long id) {
         try {
-            Reservation reservation = reservationService.findReservationById(id);
-            return ResponseEntity.ok(reservation);
+            ReservationResponseDto dto = reservationService.findReservationById(id);
+            return ResponseEntity.ok(dto);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No reservation found with given id");
         }
     }
 
     @GetMapping(path="/reservations", produces = "application/json")
-    public List<Reservation> getReservationList() {
+    public List<ReservationResponseDto> getReservationList() {
         return reservationService.getAllReservations();
     }
 
     @PostMapping(path="/reservations", consumes="application/json", produces = "application/json")
-    public ResponseEntity addReservation(@RequestBody ReservationRequestDto dto) {
+    public ResponseEntity<?> addReservation(@RequestBody ReservationRequestDto dto) {
         try {
-            Reservation reservation = reservationService.createReservation(dto);
+            ReservationResponseDto reservation = reservationService.createReservation(dto);
             return ResponseEntity.ok(reservation);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid reservation data provided");
@@ -44,9 +44,9 @@ public class ReservationController {
     }
 
     @PutMapping(path="/reservations/{id}", consumes="application/json", produces = "application/json")
-    public ResponseEntity updateReservation(@PathVariable Long id, @RequestBody ReservationRequestDto dto) {
+    public ResponseEntity<?> updateReservation(@PathVariable Long id, @RequestBody ReservationRequestDto dto) {
         try {
-            Reservation updated = reservationService.updateReservation(id, dto);
+            ReservationResponseDto updated = reservationService.updateReservation(id, dto);
             return ResponseEntity.ok(updated);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("No reservation found with given id");
