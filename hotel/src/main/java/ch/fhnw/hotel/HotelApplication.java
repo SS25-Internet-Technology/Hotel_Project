@@ -10,7 +10,6 @@ import ch.fhnw.hotel.business.service.ExtraServiceService;
 import ch.fhnw.hotel.business.service.RoomCategoryService;
 import ch.fhnw.hotel.business.service.RoomService;
 import ch.fhnw.hotel.data.domain.ExtraService;
-import ch.fhnw.hotel.data.domain.Room;
 import ch.fhnw.hotel.data.domain.RoomCategory;
 import ch.fhnw.hotel.data.enumtype.ExtraServiceType;
 import ch.fhnw.hotel.data.enumtype.RoomType;
@@ -28,9 +27,6 @@ public class HotelApplication {
 	@Autowired
     private RoomCategoryService roomCategoryService;
 
-	@Autowired
-	private RoomService roomService;
-
     HotelApplication(ExtraServiceService extraServiceService) {
         this.extraServiceService = extraServiceService;
     }
@@ -45,20 +41,6 @@ public class HotelApplication {
 	// To resolve the error, delete the file and restart the application
 	@PostConstruct
 	private void initPlaceholderData() throws Exception {
-		/*
-		Room room = new Room();
-		room.setPrice(BigDecimal.valueOf(100));
-		room.setRoomAvailability(true);
-		room.setRoomNumber("101");
-		roomService.addRoom(room);
-	
-		room = new Room();
-		room.setPrice(BigDecimal.valueOf(150));
-		room.setRoomAvailability(false);
-		room.setRoomNumber("202");
-		roomService.addRoom(room);
-		*/
-
 		ExtraService extraService = new ExtraService();
 		extraService.setType(ExtraServiceType.PAYTV);
 		extraService.setPrice(BigDecimal.valueOf(20));
