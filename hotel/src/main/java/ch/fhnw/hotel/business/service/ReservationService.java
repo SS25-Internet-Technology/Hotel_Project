@@ -45,8 +45,8 @@ public class ReservationService {
     }
 
     public ReservationResponseDto createReservation(ReservationRequestDto dto) throws Exception {
-        Room room = roomRepository.findById(dto.getRoomId())
-                .orElseThrow(() -> new RuntimeException("Room not found"));
+        Room room = roomRepository.findByRoomNumber(dto.getRoomNumber())
+                .orElseThrow(() -> new RuntimeException("Room with id " + dto.getRoomNumber() + " does not exist"));
 
         Reservation reservation = new Reservation();
         setReservationFields(reservation, room, dto);
@@ -58,8 +58,8 @@ public class ReservationService {
         Reservation reservation = reservationRepository.findById(reservationId)
             .orElseThrow(() -> new RuntimeException("Reservation with id " + reservationId + " does not exist"));
 
-        Room room = roomRepository.findById(dto.getRoomId())
-            .orElseThrow(() -> new RuntimeException("Room with id " + dto.getRoomId() + " does not exist"));
+        Room room = roomRepository.findByRoomNumber(dto.getRoomNumber())
+            .orElseThrow(() -> new RuntimeException("Room with id " + dto.getRoomNumber() + " does not exist"));
 
         // Remove existing ExtraService relationships
         reservation.getExtraServices().clear();

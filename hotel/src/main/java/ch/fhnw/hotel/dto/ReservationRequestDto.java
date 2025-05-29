@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 public class ReservationRequestDto {
 
-    private Long roomId;
+    private String roomNumber;
     private String paymentInfo;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;

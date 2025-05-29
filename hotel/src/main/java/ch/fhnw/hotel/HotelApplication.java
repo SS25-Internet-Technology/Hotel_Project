@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RestController;
 import ch.fhnw.hotel.business.service.ExtraServiceService;
 import ch.fhnw.hotel.business.service.RoomCategoryService;
-import ch.fhnw.hotel.business.service.RoomService;
 import ch.fhnw.hotel.data.domain.ExtraService;
 import ch.fhnw.hotel.data.domain.RoomCategory;
 import ch.fhnw.hotel.data.enumtype.ExtraServiceType;
