@@ -39,7 +39,7 @@ public class ReservationController {
             ReservationResponseDto reservation = reservationService.createReservation(dto);
             return ResponseEntity.ok(reservation);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid reservation data provided");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
     }
 
@@ -49,7 +49,7 @@ public class ReservationController {
             ReservationResponseDto updated = reservationService.updateReservation(id, dto);
             return ResponseEntity.ok(updated);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("No reservation found with given id");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
     }
 

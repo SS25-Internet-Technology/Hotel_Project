@@ -21,8 +21,8 @@ public class RoomResponseDto {
         this.price = room.getPrice();
         this.roomNumber = room.getRoomNumber();
         this.roomAvailability = room.isRoomAvailability();
-        this.roomType = room.getCategory().getRoomType().toString();
-        this.smokeAllowed = room.getCategory().isSmokeAllowed();
-        this.seasonalMultiplier = room.getCategory().getSeasonalMultiplier();
+        this.roomType = room.getRoomType().toString();
+        this.smokeAllowed = room.isSmokeAllowed();
+        this.seasonalMultiplier = room.getSeasonalMultiplier();
     }   
 }

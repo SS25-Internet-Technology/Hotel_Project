@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.hotel.data.domain.ExtraService;
 import ch.fhnw.hotel.data.domain.Reservation;
 import ch.fhnw.hotel.data.domain.Room;
-import ch.fhnw.hotel.data.domain.RoomCategory;
 import ch.fhnw.hotel.data.link.ReservationExtraService;
 import ch.fhnw.hotel.data.repository.ExtraServiceRepository;
 import ch.fhnw.hotel.data.repository.ReservationRepository;
@@ -45,11 +44,10 @@ public class ReservationService {
     }
 
     public ReservationResponseDto createReservation(ReservationRequestDto dto) throws Exception {
-        Room room = roomRepository.findByRoomNumber(dto.getRoomNumber())
-                .orElseThrow(() -> new RuntimeException("Room with id " + dto.getRoomNumber() + " does not exist"));
 
+        // Create and save the reservation
         Reservation reservation = new Reservation();
-        setReservationFields(reservation, room, dto);
+        setReservationFields(reservation, dto);
         reservationRepository.save(reservation);
         return new ReservationResponseDto(reservation);
     }
@@ -58,19 +56,25 @@ public class ReservationService {
         Reservation reservation = reservationRepository.findById(reservationId)
             .orElseThrow(() -> new RuntimeException("Reservation with id " + reservationId + " does not exist"));
 
-        Room room = roomRepository.findByRoomNumber(dto.getRoomNumber())
-            .orElseThrow(() -> new RuntimeException("Room with id " + dto.getRoomNumber() + " does not exist"));
-
         // Remove existing ExtraService relationships
         reservation.getExtraServices().clear();
 
-        setReservationFields(reservation, room, dto);
+        setReservationFields(reservation, dto);
         reservationRepository.save(reservation);
         return new ReservationResponseDto(reservation);
     }
 
     // Helper method to set reservation fields and calculate total
-    private void setReservationFields(Reservation reservation, Room room, ReservationRequestDto dto) throws Exception {
+    private void setReservationFields(Reservation reservation, ReservationRequestDto dto) throws Exception {
+        // Find all available rooms matching the requested type and smoking preference
+        List<Room> rooms = roomRepository.findByRoomTypeAndSmokeAllowedAndRoomAvailability(
+            dto.getRoomType(), dto.isSmokeAllowed(), true );
+        if (rooms.isEmpty()) {
+            throw new RuntimeException("No available room found for the given type and smokeAllowed");
+        }
+        // Select a random room from the available list
+        Room room = rooms.get((int)(Math.random() * rooms.size()));        
+        
         reservation.setRoom(room);
         reservation.setPaymentInfo(dto.getPaymentInfo());
         reservation.setCheckInDate(dto.getCheckInDate());
@@ -94,10 +98,9 @@ public class ReservationService {
             total = total.add(extra.getExtraService().getPrice());
         }
 
-            // Apply seasonal multiplier if high season
-        RoomCategory category = room.getCategory();
-        if (isHighSeason(dto.getCheckInDate()) && category != null && category.getSeasonalMultiplier() != null) {
-            total = total.multiply(category.getSeasonalMultiplier());
+        // Apply seasonal multiplier if high season
+        if (isHighSeason(dto.getCheckInDate()) && room != null && room.getSeasonalMultiplier() != null) {
+            total = total.multiply(room.getSeasonalMultiplier());
         }
 
         reservation.setTotal(total);

@@ -7,11 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RestController;
 import ch.fhnw.hotel.business.service.ExtraServiceService;
-import ch.fhnw.hotel.business.service.RoomCategoryService;
 import ch.fhnw.hotel.data.domain.ExtraService;
-import ch.fhnw.hotel.data.domain.RoomCategory;
 import ch.fhnw.hotel.data.enumtype.ExtraServiceType;
-import ch.fhnw.hotel.data.enumtype.RoomType;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 
@@ -22,9 +19,6 @@ public class HotelApplication {
 
 	@Autowired
     private ExtraServiceService extraServiceService;
-
-	@Autowired
-    private RoomCategoryService roomCategoryService;
 
     HotelApplication(ExtraServiceService extraServiceService) {
         this.extraServiceService = extraServiceService;
@@ -50,30 +44,6 @@ public class HotelApplication {
 		extraService.setPrice(BigDecimal.valueOf(40));
 		extraServiceService.addExtraService(extraService);
 
-		RoomCategory roomCategory = new RoomCategory();
-		roomCategory.setRoomType(RoomType.SINGLE);
-		roomCategory.setSmokeAllowed(true);
-		roomCategory.setSeasonalMultiplier(BigDecimal.valueOf(1.5));
-		roomCategoryService.addRoomCategory(roomCategory);
-
-		roomCategory = new RoomCategory();
-		roomCategory.setRoomType(RoomType.SINGLE);
-		roomCategory.setSmokeAllowed(false);
-		roomCategory.setSeasonalMultiplier(BigDecimal.valueOf(1.2));
-		roomCategoryService.addRoomCategory(roomCategory);
-
-		roomCategory = new RoomCategory();
-		roomCategory.setRoomType(RoomType.DOUBLE);
-		roomCategory.setSmokeAllowed(true);
-		roomCategory.setSeasonalMultiplier(BigDecimal.valueOf(2.0));
-		roomCategoryService.addRoomCategory(roomCategory);
-
-		roomCategory = new RoomCategory();
-		roomCategory.setRoomType(RoomType.DOUBLE);
-		roomCategory.setSmokeAllowed(false);
-		roomCategory.setSeasonalMultiplier(BigDecimal.valueOf(1.8));
-		roomCategoryService.addRoomCategory(roomCategory);
-		
 	}
 
 }

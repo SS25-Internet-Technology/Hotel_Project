@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ch.fhnw.hotel.data.domain.Room;
-import ch.fhnw.hotel.data.domain.RoomCategory;
-import ch.fhnw.hotel.data.repository.RoomCategoryRepository;
 import ch.fhnw.hotel.data.repository.RoomRepository;
 import ch.fhnw.hotel.dto.RoomRequestDto;
 import ch.fhnw.hotel.dto.RoomResponseDto;
@@ -18,9 +16,6 @@ public class RoomService {
 
     @Autowired
     private RoomRepository roomRepository;
-
-    @Autowired
-    private RoomCategoryRepository roomCategoryRepository;
 
     public RoomResponseDto findRoomById(Long id) {
         try {
@@ -64,10 +59,13 @@ public class RoomService {
         }
         room.setRoomNumber(dto.getRoomNumber());
 
-        RoomCategory roomCategory = roomCategoryRepository.findByRoomTypeAndSmokeAllowed(
-            dto.getRoomType(), dto.isSmokeAllowed()
-        ).orElseThrow(() -> new RuntimeException("Room category not found"));
-        room.setCategory(roomCategory);
+        room.setRoomType(dto.getRoomType());
+        room.setSmokeAllowed(dto.isSmokeAllowed());
+        if (dto.getSeasonalMultiplier() == null || dto.getSeasonalMultiplier().compareTo(BigDecimal.ZERO) <= 0) {
+            throw new Exception("Seasonal multiplier must be greater than 0.");
+        }
+        room.setSeasonalMultiplier(dto.getSeasonalMultiplier());
+
     }
 
     public void deleteRoom(Long id) throws Exception {

@@ -12,4 +12,5 @@ public class RoomRequestDto {
     private boolean roomAvailability;
     private RoomType roomType;
     private boolean smokeAllowed;
+    private BigDecimal seasonalMultiplier;
 }

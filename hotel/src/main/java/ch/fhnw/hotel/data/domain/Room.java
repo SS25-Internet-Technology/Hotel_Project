@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.fhnw.hotel.data.enumtype.RoomType;
+
 @Entity
 @Getter
 @Setter
@@ -32,9 +34,18 @@ public class Room {
     @Column(name = "room_availability")
     private boolean roomAvailability;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private RoomCategory category;
+    // Room type: SINGLE or DOUBLE
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RoomType roomType;
+
+    // Indicates if smoking is allowed in this category
+    @Column(nullable = false)
+    private boolean smokeAllowed;
+
+    // Seasonal price multiplier (e.g., 1.0 for normal, 1.5 for high season)
+    @Column(nullable = false, precision = 5, scale = 2)
+    private BigDecimal seasonalMultiplier;
 
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Reservation> reservations = new ArrayList<>();
