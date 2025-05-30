@@ -28,8 +28,6 @@ public class Reservation {
 
     private BigDecimal total;
 
-    private String paymentInfo;
-
     private LocalDate checkInDate;
 
     private LocalDate checkOutDate;
@@ -40,5 +38,9 @@ public class Reservation {
 
     @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReservationExtraService> extraServices = new ArrayList<>();;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "payment_info_id")
+    private PaymentInfo paymentInfo;
 
 }

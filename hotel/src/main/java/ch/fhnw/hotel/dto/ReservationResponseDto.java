@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+import ch.fhnw.hotel.data.domain.PaymentInfo;
 import ch.fhnw.hotel.data.domain.Reservation;
 import ch.fhnw.hotel.data.enumtype.RoomType;
 import lombok.Getter;
@@ -19,13 +20,13 @@ public class ReservationResponseDto {
     private LocalDate checkOutDate;
     private List<String> extraServices;
     private BigDecimal total;
+    private PaymentInfo paymentInfoDetails;
 
     public ReservationResponseDto(Reservation reservation) {
         this.id = reservation.getId();
         this.roomNumber = reservation.getRoom().getRoomNumber();
         this.roomType = reservation.getRoom().getRoomType();
         this.smokeAllowed = reservation.getRoom().isSmokeAllowed();
-        this.paymentInfo = reservation.getPaymentInfo();
         this.checkInDate = reservation.getCheckInDate();
         this.checkOutDate = reservation.getCheckOutDate();
         this.extraServices = reservation.getExtraServices().stream()
@@ -33,5 +34,6 @@ public class ReservationResponseDto {
             .distinct()
             .toList();
         this.total = reservation.getTotal();
+        this.paymentInfoDetails = reservation.getPaymentInfo();
     }
 }

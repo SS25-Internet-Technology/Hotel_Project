@@ -2,6 +2,8 @@ package ch.fhnw.hotel.controller;
 
 import ch.fhnw.hotel.business.service.GuestService;
 import ch.fhnw.hotel.data.domain.Guest;
+import io.swagger.v3.oas.annotations.Hidden;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Hidden
 @RestController
 @RequestMapping(path = "/hotel")
 public class GuestController {

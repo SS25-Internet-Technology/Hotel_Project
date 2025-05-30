@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ch.fhnw.hotel.data.domain.ExtraService;
+import ch.fhnw.hotel.data.domain.PaymentInfo;
 import ch.fhnw.hotel.data.domain.Reservation;
 import ch.fhnw.hotel.data.domain.Room;
 import ch.fhnw.hotel.data.link.ReservationExtraService;
@@ -76,7 +77,6 @@ public class ReservationService {
         Room room = rooms.get((int)(Math.random() * rooms.size()));        
         
         reservation.setRoom(room);
-        reservation.setPaymentInfo(dto.getPaymentInfo());
         reservation.setCheckInDate(dto.getCheckInDate());
         reservation.setCheckOutDate(dto.getCheckOutDate());
 
@@ -104,6 +104,21 @@ public class ReservationService {
         }
 
         reservation.setTotal(total);
+
+        // Create and link PaymentInfo
+        createAndLinkPaymentInfo(reservation, dto);
+    }
+
+    // Helper method to create and link PaymentInfo from DTO
+    private PaymentInfo createAndLinkPaymentInfo(Reservation reservation, ReservationRequestDto dto) {
+        PaymentInfo paymentInfo = new PaymentInfo();
+        paymentInfo.setFirstName(dto.getFirstName());
+        paymentInfo.setLastName(dto.getLastName());
+        paymentInfo.setEmail(dto.getEmail());
+        paymentInfo.setPhoneNumber(dto.getPhoneNumber());
+        paymentInfo.setCreditCard(dto.getCreditCard());
+        reservation.setPaymentInfo(paymentInfo);
+        return paymentInfo;
     }
 
     private boolean isHighSeason(LocalDate checkInDate) {

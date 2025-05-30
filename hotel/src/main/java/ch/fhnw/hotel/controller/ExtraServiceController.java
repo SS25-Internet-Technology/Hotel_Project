@@ -37,7 +37,7 @@ public class ExtraServiceController {
         try {
             extraService = extraServiceService.addExtraService(extraService);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Extra service already exists or invalid data provided");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
         return ResponseEntity.ok(extraService);
     }
@@ -47,7 +47,7 @@ public class ExtraServiceController {
         try {
             extraService = extraServiceService.updateExtraService(id, extraService);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("No extra service found with the given id");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
         return ResponseEntity.ok(extraService);
     }

@@ -42,7 +42,7 @@ public class RoomController {
             return ResponseEntity.ok(roomService.addRoom(dto));
 
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Room already exists or invalid data provided");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
     }
 
@@ -52,7 +52,7 @@ public class RoomController {
             return ResponseEntity.ok(roomService.updateRoom(id, dto));
             
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("No room found with given id");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
 
         }        
     }
