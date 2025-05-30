@@ -23,15 +23,17 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 
 ### Domain Design
-[ERD](https://drive.google.com/drive/u/1/folders/1xLNBBYhVzAGmt-Be_yOchE8u-uEWnczm)
+[ERD](https://drive.google.com/file/d/1vilsHmXhCGowdZmCW5X3UiojYT2ASkFP/view?usp=sharing)
 
-![image](https://github.com/user-attachments/assets/e88b73d2-ad2a-42bf-b56d-40e58695d544)
+
+![image](https://github.com/user-attachments/assets/6fb2fc7d-0841-4cac-a99b-e6554ef7afd7)
+
 
 ### Business Logic
 
 ![image](https://github.com/user-attachments/assets/fd840ab0-8866-45c9-a850-a386c7edef27)
-![image](https://github.com/user-attachments/assets/84755b0c-83dc-4083-a703-e280d45b1c43)
 ![image](https://github.com/user-attachments/assets/5af75216-9b98-46c2-bf5a-9ac9e24bdf29)
+![image](https://github.com/user-attachments/assets/89ba3fa0-15f5-40a0-950f-88ecba73c014)
 ![image](https://github.com/user-attachments/assets/3dda8489-c628-483d-a033-55db58bbe2c6)
 
 
