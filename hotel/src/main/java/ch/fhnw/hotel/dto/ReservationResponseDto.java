@@ -15,7 +15,6 @@ public class ReservationResponseDto {
     private String roomNumber;
     private RoomType roomType;
     private boolean smokeAllowed;
-    private String paymentInfo;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
     private List<String> extraServices;

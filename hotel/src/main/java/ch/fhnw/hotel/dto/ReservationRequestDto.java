@@ -10,7 +10,6 @@ import lombok.Getter;
 public class ReservationRequestDto {
     private RoomType roomType;
     private boolean smokeAllowed;
-    private String paymentInfo;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
     private List<Long> extraServiceIds;
