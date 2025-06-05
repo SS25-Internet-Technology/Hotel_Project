@@ -90,7 +90,7 @@ Available REST API
 |POST                |/api/Room              | Create a new room                                |
 |DELETE              |/api/Room              | Delete a room                                    |
 |GET                 |/api/Room              | List all rooms                                   |
-|GET                 |/api/Room              | List rooms (alternative view)                    |
+|GET                 |/api/RoomList          | List rooms (alternative view)                    |
 |PUT                 |/api/Room              | Update room                                      |
 
 # 4. Execution Project Management
