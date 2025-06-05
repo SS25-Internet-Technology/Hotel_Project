@@ -40,6 +40,11 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 # 3. Implementation Execution
 ### Backend Technology
+This Web application is relying on [Spring Boot](https://projects.spring.io/spring-boot) and the following dependencies:
+
+- [Spring Boot]: (https://projects.spring.io/spring-boot)
+- [Spring Data:] (https://projects.spring.io/spring-data)
+- [Java Persistence API (JPA)]
 ### Frontend Technology
 
 # 4. Execution Project Management
