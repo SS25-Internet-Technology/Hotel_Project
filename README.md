@@ -70,12 +70,28 @@ Then, the following further dependencies have been added to the project `pom.xml
 ### Frontend Technology
 Available REST API
 
-|     **Method**     |     **Endpoint**     |       **Description**            |
-|--------------------|----------------------|----------------------------------|
-|POST                |/api/ExtraService     | Create a new Extra Service       |
-|DELETE		     |/api/Extraservice     | Cancel a Extra Service           |
-|GET	             |/api/ExtraService     | List all Extra Service           |
-|PUT                 |/api/ExtraSevice      | Update Extra Service information |
+|     **Method**     |     **Endpoint**      |       **Description**                            |
+|--------------------|-----------------------|--------------------------------------------------|
+|POST                |/api/ExtraService      | Create a new Extra Service                       |
+|DELETE		     |/api/ExtraService      | Cancel an Extra Service                          |
+|GET	             |/api/ExtraService      | List all Extra Services                          |
+|GET                 |/api/ExtraServiceList  | List Extra Services (alternative view)           |
+|PUT                 |/api/ExtraService      | Update Extra Service information                 |
+|POST	             |/api/PaymentInfo       | Create a new Payment information                 |
+|DELETE              |/api/PaymentInfo       | Cancel Payment                                   |
+|GET                 |/api/PaymentInfo       | List all Payment Information                     |
+|GET                 |/api/PaymentInfoList   | List Payment Information (alternative view)      |
+|PUT                 |/api/PaymentInfo       | Update Payment Information                       |
+|POST                |/api/Reservation       | Create a new Reservation                         |
+|DELETE              |/api/Reservation       | Cancel a Reservation                             |
+|GET                 |/api/Reservation       | List all Reservations                            |
+|GET                 |/api/ReservationList   | List Reservations (alternative view)             |
+|PUT                 |/api/Reservation       | Update Reservation                               |
+|POST                |/api/Room              | Create a new room                                |
+|DELETE              |/api/Room              | Delete a room                                    |
+|GET                 |/api/Room              | List all rooms                                   |
+|GET                 |/api/Room              | List rooms (alternative view)                    |
+|PUT                 |/api/Room              | Update room                                      |
 
 # 4. Execution Project Management
 ### Milestones and workload distribution
