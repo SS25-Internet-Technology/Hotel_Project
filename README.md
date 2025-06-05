@@ -42,9 +42,31 @@ The hotel reservation system is designed to manage room bookings, additional ser
 ### Backend Technology
 This Web application is relying on [Spring Boot](https://projects.spring.io/spring-boot) and the following dependencies:
 
-- [Spring Boot]: (https://projects.spring.io/spring-boot)
-- [Spring Data:] (https://projects.spring.io/spring-data)
-- [Java Persistence API (JPA)]
+- [Spring Boot] (https://projects.spring.io/spring-boot)
+- [Spring Data] (https://projects.spring.io/spring-data)
+- [Java Persistence API (JPA)] (http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+- [H2 Database Engine] (https://www.h2database.com)
+To bootstrap the application, the [Spring Initializr](https://start.spring.io/) has been used.
+Then, the following further dependencies have been added to the project `pom.xml`:
+
+-DB:
+```XML
+<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+</dependency>
+```
+- SWAGGER:
+```XML
+   <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.3.0</version>
+   </dependency>
+```
+
+
 ### Frontend Technology
 
 # 4. Execution Project Management
