@@ -71,16 +71,11 @@ Then, the following further dependencies have been added to the project `pom.xml
 Available REST API
 
 |     **Method**     |     **Endpoint**     |       **Description**            |
-   |
 |--------------------|----------------------|----------------------------------|
 |POST                |/api/ExtraService     | Create a new Extra Service       |
-   |
 |DELETE		     |/api/Extraservice     | Cancel a Extra Service           |
-   |
 |GET	             |/api/ExtraService     | List all Extra Service           |
-   |
 |PUT                 |/api/ExtraSevice      | Update Extra Service information |
-   |
 
 # 4. Execution Project Management
 ### Milestones and workload distribution
