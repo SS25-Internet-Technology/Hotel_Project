@@ -117,9 +117,11 @@ Finally, you can click on Login or Register, depending on whether you already ha
 ### Milestones and workload distribution
 To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
 
-|         Milestones      | Assigned To  | Status       |   Task / Feature               |
-|-------------------------|--------------|--------------|--------------------------------|
-|  Use Case               | Delia        |  Completed   | Implemented login/logout       |
-| Room Management UI      | Luz          |  Completed   | Pending responsive design      |
-| Payment System          | Been         |  Completed   | Waiting for API documentation  |
-| Database Schema Design  | Luz, Been, Delia   |  Completed   | Reviewing by team               |
+|         Milestones                   | Assigned To      | Status       |   Task / Feature                                                |
+|--------------------------------------|------------------|--------------|-----------------------------------------------------------------|
+| Analysis                             | Delia, Luz, Been |  Completed   | Scenario ideation, use case analysis and user story writing     |
+| Prototype Design                     | Luz              |  Completed   | Creative of wireframe and prototype                             |
+| Domain Design                        | Delia            |  Completed   | Definition of domain model                                      |
+| Business logic and API design        | Luz, Been, Delia |  Completed   | Definition of business logic and API                            |
+| Data and API Implementation          | Been             |              |Implementation of data access and business logic layers, and API |
+| Security and Frontend Implementation | Been, Delia, Luz |              |Integration of security framework and frontend realisation       |
