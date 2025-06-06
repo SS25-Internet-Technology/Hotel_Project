@@ -38,6 +38,7 @@ When a user tries to book a room, the system performs the following steps:
    - The room status is updated to “reserved”.
 3. If the room is already reserved:
    - The system returns an error message indicating unavailability.
+
 | **Method**   | **EndPoint**    | **Description**                               |
 |--------------|-----------------|-----------------------------------------------|
 |POST          |/api/Reservation | Creates a reservation if the room is avalaible|
