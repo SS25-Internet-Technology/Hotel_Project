@@ -95,6 +95,13 @@ Available REST API
 
 Application views and used APIs
 
+|   **View**           |   **Description**        |   **APIs Used**     |
+|----------------------|--------------------------|---------------------|
+| Room reservation     |                          | POST/api/Room       |
+| Extra service        |                          | POST/api/Room       |
+| Oersonal information |                          | GET/api/Reservation |
+| Gallery              |                          | POST/api/Room       |
+| Rooms                |                          | DELETE/api/Room     |
 # 4. Execution Project Management
 ### Milestones and workload distribution
 To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
