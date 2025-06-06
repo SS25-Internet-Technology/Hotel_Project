@@ -30,16 +30,17 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 
 ### Business Logic
-The core business logic of the application ensures that a **room reservation can only be made if the selected room is available**.
-
 When a user tries to book a room, the system performs the following steps:
 
-1. ✅ Checks if the selected room is available on the desired date.
-2. 📌 If the room is available:
+1. Checks if the selected room is available on the desired date.
+2. If the room is available:
    - The reservation is created and saved.
    - The room status is updated to “reserved”.
-3. ❌ If the room is already reserved:
+3. If the room is already reserved:
    - The system returns an error message indicating unavailability.
+| **Method**   | **EndPoint**    | **Description**                               |
+|--------------|-----------------|-----------------------------------------------|
+|POST          |/api/Reservation | Creates a reservation if the room is avalaible|
 
 # 3. Implementation Execution
 ### Backend Technology
