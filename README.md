@@ -31,14 +31,15 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 ### Business Logic
 
-This logic is handled by the `ExtraServiceService` class. The main rules are:
-- A new extra service must have a valid price **greater than 0**. if not, an exception is thrown.
-- when updating an extra service:
-  - Only non-null values are updated
-  - The price must also be greater than 0 if it is being changed.
-- Deletion is only allowed if the service **exists**, otherwise an error is returned.
-- Retrieval of a specific service throws an error if the ID does not exist.
-- A complete list of extra service can be fetched without restrictions.
+On the reservation page, users are presented with radio button options to select extra services:
+
+| Extra Option        | Choices                | Price Impact       |
+|---------------------|------------------------|--------------------|
+| Smoking Preference  | Non-Smoking / Smoking  | No extra cost      |
+| Pay TV              | Yes / No               | + CHF 20           |
+| Minibar             | Yes / No               | + CHF 40           |
+
+These selections directly influence the stored data and final reservation price.
 
 **CLASS**: `ExtraServiceService`
 **REPOSITORY**: `ExtraServiceRepository`
@@ -133,5 +134,5 @@ To improve productivity, we strategically assigned tasks based on individual str
 | Prototype Design                     | Luz              |  Completed   | Creative of wireframe and prototype                             |
 | Domain Design                        | Delia            |  Completed   | Definition of domain model                                      |
 | Business logic and API design        | Luz, Been, Delia |  Completed   | Definition of business logic and API                            |
-| Data and API Implementation          | Been             |              |Implementation of data access and business logic layers, and API |
+| Data and API Implementation          | Been             |  Completed   |Implementation of data access and business logic layers, and API |
 | Security and Frontend Implementation | Been, Delia, Luz |              |Integration of security framework and frontend realisation       |
