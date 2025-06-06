@@ -33,9 +33,16 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 This logic is handled by the `ExtraServiceService` class. The main rules are:
 - A new extra service must have a valid price **greater than 0**. if not, an exception is thrown.
-- Updating an extra service only changes values that are not null and valid.
-- All service can be listed without restrictions.
-- Try to access or delete a non-existent extra service results in an exception with a meaningful message.
+- when updating an extra service:
+  - Only non-null values are updated
+  - The price must also be greater than 0 if it is being changed.
+- Deletion is only allowed if the service **exists**, otherwise an error is returned.
+- Retrieval of a specific service throws an error if the ID does not exist.
+- A complete list of extra service can be fetched without restrictions.
+
+**CLASS**: `ExtraServiceService`
+**REPOSITORY**: `ExtraServiceRepository`
+**ENTITY**: `ExtraService`
 
 |  **Method**  | **Endpoint**               | **Description**                               |
 |--------------|----------------------------|-----------------------------------------------|
