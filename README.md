@@ -30,18 +30,21 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 
 ### Business Logic
-When a user tries to book a room, the system performs the following steps:
 
-1. Checks if the selected room is available on the desired date.
-2. If the room is available:
-   - The reservation is created and saved.
-   - The room status is updated to “reserved”.
-3. If the room is already reserved:
-   - The system returns an error message indicating unavailability.
+This logic is handled by the `ExtraServiceService` class. The main rules are:
+- A new extra service must have a valid price **greater than 0**. if not, an exception is thrown.
+- Updating an extra service only changes values that are not null and valid.
+- All service can be listed without restrictions.
+- Try to access or delete a non-existent extra service results in an exception with a meaningful message.
 
-| **Method**   | **EndPoint**    | **Description**                               |
-|--------------|-----------------|-----------------------------------------------|
-|POST          |/api/Reservation | Creates a reservation if the room is avalaible|
+|  **Method**  | **Endpoint**               | **Description**                               |
+|--------------|----------------------------|-----------------------------------------------|
+| GET          | /api/extraservices/{id}    | Retrieves an extra services by ID             |
+| GET          | /api/extraservices         | Returns a list of all avaiable extra services |
+| POST         | /api/extraservices         | Adds a new extra service                      |
+| PUT          | /api/extraservices/{id}    | Updates existing extra service                |
+| DELETE       | /api/extraservices/{id}    | Deletes an extra service                      |
+
 
 # 3. Implementation Execution
 ### Backend Technology
