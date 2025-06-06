@@ -30,8 +30,16 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 
 ### Business Logic
+The core business logic of the application ensures that a **room reservation can only be made if the selected room is available**.
 
+When a user tries to book a room, the system performs the following steps:
 
+1. ✅ Checks if the selected room is available on the desired date.
+2. 📌 If the room is available:
+   - The reservation is created and saved.
+   - The room status is updated to “reserved”.
+3. ❌ If the room is already reserved:
+   - The system returns an error message indicating unavailability.
 
 # 3. Implementation Execution
 ### Backend Technology
@@ -101,6 +109,8 @@ Application views and used APIs
 ### Execution
 Upon entering the app, you'll be able to view the history of the Golden Harmony Hotel. Afterward, you can click on the Rooms, Gallery, Login, and Register tabs.
 When you click on the Rooms tab, you must select the desired room type and the number of days you wish to book to continue with your reservation. Next, you must select the additional services that your room will include to continue with your reservation and payment.
+By selecting the gallery, you will be able to view the spaces available in the rooms and you can book whenever you want.
+Finally, you can click on Login or Register, depending on whether you already have an account with our hotel or not.
 
 ### Milestones and workload distribution
 To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
