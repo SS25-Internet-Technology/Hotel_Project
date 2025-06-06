@@ -31,7 +31,8 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 ### Business Logic
 
-On the reservation page, users are presented with radio button options to select extra services:
+
+During the hotel booking process, the user is presented with optional **Extra Services** to personalize their stay. These appear as simple multiple-choice options on the reservation form.
 
 | Extra Option        | Choices                | Price Impact       |
 |---------------------|------------------------|--------------------|
@@ -39,7 +40,14 @@ On the reservation page, users are presented with radio button options to select
 | Pay TV              | Yes / No               | + CHF 20           |
 | Minibar             | Yes / No               | + CHF 40           |
 
-These selections directly influence the stored data and final reservation price.
+- **Smoking Preference**:
+  - Stored for room assignment logic (but does not affect price).
+- **Pay TV and Minibar**:
+  - If selected, these are added to the booking as separate services.
+  - Their prices (CHF 20 and CHF 40) are validated and summed into the reservation total.
+- All extra services are **optional**.
+- Only services with a **positive price** are accepted in the system.
+- Services can be **viewed**, **added**, **updated**, or **deleted** via admin APIs.
 
 **CLASS**: `ExtraServiceService`
 **REPOSITORY**: `ExtraServiceRepository`
