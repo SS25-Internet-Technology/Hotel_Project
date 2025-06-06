@@ -31,11 +31,6 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 ### Business Logic
 
-![image](https://github.com/user-attachments/assets/fd840ab0-8866-45c9-a850-a386c7edef27)
-![image](https://github.com/user-attachments/assets/5af75216-9b98-46c2-bf5a-9ac9e24bdf29)
-![image](https://github.com/user-attachments/assets/89ba3fa0-15f5-40a0-950f-88ecba73c014)
-![image](https://github.com/user-attachments/assets/3dda8489-c628-483d-a033-55db58bbe2c6)
-
 
 
 # 3. Implementation Execution
@@ -103,6 +98,10 @@ Application views and used APIs
 | Gallery              |                          | POST/api/Room       |
 | Rooms                |                          | DELETE/api/Room     |
 # 4. Execution Project Management
+### Execution
+Upon entering the app, you'll be able to view the history of the Golden Harmony Hotel. Afterward, you can click on the Rooms, Gallery, Login, and Register tabs.
+When you click on the Rooms tab, you must select the desired room type and the number of days you wish to book to continue with your reservation. Next, you must select the additional services that your room will include to continue with your reservation and payment.
+
 ### Milestones and workload distribution
 To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
 
