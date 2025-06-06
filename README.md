@@ -100,13 +100,13 @@ Available REST API
 
 Application views and used APIs
 
-|   **View**           |   **Description**        |   **APIs Used**     |
-|----------------------|--------------------------|---------------------|
-| Room reservation     |                          | POST/api/Room       |
-| Extra service        |                          | POST/api/Room       |
-| Oersonal information |                          | GET/api/Reservation |
-| Gallery              |                          | POST/api/Room       |
-| Rooms                |                          | DELETE/api/Room     |
+|   **View**           |   **Description**                                                       |   **APIs Used**     |
+|----------------------|-------------------------------------------------------------------------|---------------------|
+| Room reservation     |  Allows the user to select dates and room type to create a reservation  | POST/api/Room       |
+| Extra service        | Lets the guest choose addtional services ( TV & MiniBar) during booking | POST/api/Room       |
+| Personal information | Displays guest details and allows editing or confirmation               | GET/api/Reservation |
+| Gallery              | Shows images of available rooms                                         | POST/api/Room       |
+| Rooms                | Admin panel to manage room data                                         | DELETE/api/Room     |
 # 4. Execution Project Management
 ### Execution
 Upon entering the app, you'll be able to view the history of the Golden Harmony Hotel. Afterward, you can click on the Rooms, Gallery, Login, and Register tabs.
