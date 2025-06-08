@@ -11,9 +11,10 @@ The hotel reservation system is designed to manage room bookings, additional ser
 4.	As an admin, I want to determine the available rooms per category for a specific date or period so that I can provide accurate availability information to potential guests.
    
 ### Use Case
-![UserCase drawio](https://github.com/user-attachments/assets/2342a8c6-fa59-468a-adc3-2c4526bef433)
+![Captura de pantalla 2025-06-08 153017](https://github.com/user-attachments/assets/031126d9-6eb7-4835-a6a4-2ac8bb317d20)
 
 # 2. Design 
+
 ### Prototype Design
 [Prototype](https://www.canva.com/design/DAGg89feR5o/OUcY_-t1v___ChhVfp6hAA/edit?utm_content=DAGg89feR5o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
