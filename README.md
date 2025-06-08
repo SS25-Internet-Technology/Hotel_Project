@@ -8,10 +8,8 @@ The hotel reservation system is designed to manage room bookings, additional ser
 1.	As an admin, I want to view so that I can explore and manage room categories, including single, double, smoking, and non-smoking rooms.
 2.	As an admin, I want to set and adjust seasonal prices for different room categories so that the pricing reflects high and low demand periods.
 3.	As an admin, I want to view, edit, and delete reservations so that I can ensure accuracy and address any booking issues.
-4.	As an admin, I want to manage additional services such as PayTV and minibar so that I can add, edit, or remove service options available to guests.
-5.	As an admin, I want to determine the available rooms per category for a specific date or period so that I can provide accurate availability information to potential guests.
-6.	As an admin, I want to log in so that I can authenticate myself and access the admin functionalities securely.
-
+4.	As an admin, I want to determine the available rooms per category for a specific date or period so that I can provide accurate availability information to potential guests.
+   
 ### Use Case
 ![UserCase drawio](https://github.com/user-attachments/assets/2342a8c6-fa59-468a-adc3-2c4526bef433)
 
@@ -31,8 +29,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 ### Business Logic
 
-
-During the hotel booking process, the user is presented with optional **Extra Services** to personalize their stay. These appear as simple multiple-choice options on the reservation form.
+During the hotel room booking process, the user can select one of the hotel's extra services: Service 1 is television, and Service 2 is the minibar.
 
 | Extra Option        | Choices                | Price Impact       |
 |---------------------|------------------------|--------------------|
@@ -143,4 +140,4 @@ To improve productivity, we strategically assigned tasks based on individual str
 | Domain Design                        | Delia            |  Completed   | Definition of domain model                                      |
 | Business logic and API design        | Luz, Been, Delia |  Completed   | Definition of business logic and API                            |
 | Data and API Implementation          | Been             |  Completed   |Implementation of data access and business logic layers, and API |
-| Security and Frontend Implementation | Been, Delia, Luz |              |Integration of security framework and frontend realisation       |
+| Security and Frontend Implementation | Been, Delia, Luz |  Completed   |Integration of security framework and frontend realisation       |
