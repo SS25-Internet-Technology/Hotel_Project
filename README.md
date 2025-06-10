@@ -30,7 +30,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 ### Business Logic
 
-During the hotel room booking process, the user can select one of the hotel's extra services: Service 1 is television, and Service 2 is the minibar.
+As part of the system functionality, before a user can book a room, the admin must first add the room to the system. Only after this action is completed does the room appear in the room table and become available for booking. During the hotel room booking process, the user can also select from the hotel’s extra services: Service 1 is television, and Service 2 is the minibar.
 
 | Extra Option        | Choices                | Price Impact       |
 |---------------------|------------------------|--------------------|
@@ -91,6 +91,8 @@ Then, the following further dependencies have been added to the project `pom.xml
 
 ### Frontend Technology
 Available REST API
+(https://miniature-waffle-wrgj465rvrggh97vg-8080.app.github.dev)/swagger-ui/index.html
+Enter here the codespace URL
 
 |     **Method**     |     **Endpoint**      |       **Description**                            |
 |--------------------|-----------------------|--------------------------------------------------|
@@ -132,7 +134,7 @@ By selecting the gallery, you will be able to view the spaces available in the r
 Finally, you can click on Login or Register, depending on whether you already have an account with our hotel or not.
 
 ### Milestones and workload distribution
-To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. We had to readapt it since one of the team member left the course and preasured each team memeber to work more and double check each others works. Due to a team member’s departure, we reorganized tasks to ensure timely delivery while maintaining rigorous standards
+To improve productivity, we strategically assigned tasks based on individual strengths and project requirements. However, we had to readapt our approach after one team member left the course. This change placed additional pressure on the remaining members, requiring everyone to take on more responsibilities and double-check each other’s work to maintain our standards. The week before submission, we encountered a setback due to a misunderstanding about which Codespace to use. While some updates had already been made in a newer version, a few team members were still working on the older codebase. Once this issue was identified, we were able to align our work, thoroughly review the front end, and finalize the project. Unfortunately, this misstep cost us valuable time, limiting what we were able to implement in the final stages.
 
 |         Milestones                   | Assigned To      | Status       |   Task / Feature                                                |
 |--------------------------------------|------------------|--------------|-----------------------------------------------------------------|
@@ -141,4 +143,4 @@ To improve productivity, we strategically assigned tasks based on individual str
 | Domain Design                        | Delia            |  Completed   | Definition of domain model                                      |
 | Business logic and API design        | Luz, Been, Delia |  Completed   | Definition of business logic and API                            |
 | Data and API Implementation          | Been             |  Completed   |Implementation of data access and business logic layers, and API |
-| Security and Frontend Implementation | Been, Delia, Luz |  Completed   |Integration of security framework and frontend realisation       |
+| Frontend Implementation              | Been, Delia, Luz |  Completed   |Integration of frontend realisation                              |
