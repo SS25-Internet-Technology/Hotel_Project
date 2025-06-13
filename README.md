@@ -119,13 +119,15 @@ Enter here the codespace URL
 
 Application views and used APIs
 
-|   **View**           |   **Description**                                                       |   **APIs Used**     |
-|----------------------|-------------------------------------------------------------------------|---------------------|
-| Room reservation     |  Allows the user to select dates and room type to create a reservation  | POST/api/Room       |
-| Extra service        | Lets the guest choose addtional services ( TV & MiniBar) during booking | POST/api/Room       |
-| Personal information | Displays guest details and allows editing or confirmation               | GET/api/Reservation |
-| Gallery              | Shows images of available rooms                                         | POST/api/Room       |
-| Rooms                | Admin panel to manage room data                                         | DELETE/api/Room     |
+|   **View**            |   **Description**                                                         |   **APIs Used**             |
+|-----------------------|---------------------------------------------------------------------------|-----------------------------|
+| Rooms overview        | The administrator can add more rooms                                      | POST /api/addRoom           |
+| Rooms overview        | The administrator can change the booking price of the rooms the hotel has | PUT /api/updateRoom         |
+| Rooms overview        | The administrator can delete rooms in the hotel                           | DEL /api/deleteRoom         |
+| Rooms overview        | A table is generated with the rooms available in the hotel                | GET /api/getRoomList        |
+| Reservations overview | A table is generated with the reservations at the hotel                   | GET /api/getReservationList |
+| Reservations overview | The administrator can delete reservations at the hotel                    | DEL /api/deleteReservation  |
+| Rooms                 | The user can enter to make their reservation                              | POST /api/addReservation    |
 # 4. Execution Project Management
 ### Execution
 Upon accessing the application, admins have access to dedicated tabs that help manage the system efficiently. The Reservation tab provides an overview of all current bookings, while the Add Rooms tab allows the admin to create new room entries and view existing ones. It’s important to note that users cannot make any reservations unless the admin has first added rooms to the system, as these rooms must appear in the booking interface.
