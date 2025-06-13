@@ -7,7 +7,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 ### User Stories
 1.	As an admin, I want to view so that I can explore and manage room categories, including single, double, smoking, and non-smoking rooms.
 2.	As an admin, I want to set and adjust seasonal prices for different room categories so that the pricing reflects high and low demand periods.
-3.	As an admin, I want to view, edit, and delete reservations so that I can ensure accuracy and address any booking issues.
+3.	As an admin, I want to view and delete reservations so that I can ensure accuracy and address any booking issues.
 4.	As an admin, I want to determine the available rooms per category for a specific date or period so that I can provide accurate availability information to potential guests.
 5.	As an admin, I want to have a Web app so that I can use it on different mobile devices and on desktop computers.
 6.	As an admin, I want to see a consistent visual appearance so that I can navigate easily, and it looks consistent.
