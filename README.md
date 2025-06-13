@@ -149,3 +149,8 @@ To improve productivity, we strategically assigned tasks based on individual str
 | Business logic and API design        | Luz, Been, Delia |  Completed   | Definition of business logic and API                            |
 | Data and API Implementation          | Been             |  Completed   |Implementation of data access and business logic layers, and API |
 | Frontend Implementation              | Been, Delia, Luz |  Completed   |Integration of frontend realisation                              |
+
+### Maintaner
+- Been Choi
+- Delia Sommet
+- Luz Arias
