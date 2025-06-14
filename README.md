@@ -18,7 +18,7 @@ The hotel reservation system is designed to manage room bookings, additional ser
 
 # 2. Design 
 
-### Prototype Design
+### Wireframe & Prototype Design
 [Prototype](https://www.canva.com/design/DAGg89feR5o/OUcY_-t1v___ChhVfp6hAA/edit?utm_content=DAGg89feR5o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ![Frame](https://github.com/user-attachments/assets/50af5e0b-2a58-4674-894d-131cee3e482d)
